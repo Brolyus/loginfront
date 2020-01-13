@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router'
 
 export default class Secret extends Component {
     constructor(props) {
@@ -17,8 +18,14 @@ export default class Secret extends Component {
     render() {
         return (
             <div>
-                <h1>Secret</h1>
-                <p>{this.state.message}</p>
+                {this.props.loggedIn ? (
+                    <div>
+                        <h1>Secret</h1>
+                        <p>{this.state.message}</p>
+                    </div>
+                ) : (
+                    <Redirect to='/' />
+                )}
             </div>
         )
     }

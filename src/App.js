@@ -23,7 +23,7 @@ export default class App extends Component {
     }
 
     handleToken = () => {
-        if (this.state.token !== null) {
+        if (this.state.token !== null && this.state.token !== undefined) {
             this.setState({
                 loggedIn: true
             })
@@ -93,7 +93,17 @@ export default class App extends Component {
                             <Home />
                         )}
                     </Route> */}
-                    <Route path='/secret' component={Secret} />
+                    <Route
+                        path='/secret'
+                        render={() => (
+                            <Secret
+                                {...this.state}
+                                handleToken={this.handleToken}
+                                handleSubmit={this.handleSubmit}
+                                handleChange={this.handleChange}
+                            />
+                        )}
+                    />
                 </Switch>
             </div>
         )

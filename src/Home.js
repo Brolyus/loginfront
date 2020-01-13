@@ -10,7 +10,7 @@ export default class Home extends Component {
                 <div className='LoginForm'>
                     <h1>CONNEXION</h1>
 
-                    <form onSubmit={this.props.handleSubmit} action='#'>
+                    <form onSubmit={this.props.handleSubmit}>
                         <fieldset>
                             <div className='form-data'>
                                 <label htmlFor='email'>E-MAIL</label>
