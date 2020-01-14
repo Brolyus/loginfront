@@ -87,12 +87,6 @@ export default class App extends Component {
                             />
                         )}
                     />
-                    {/* {this.state.loggedIn ? (
-                            <Redirect to='/secret' />
-                        ) : (
-                            <Home />
-                        )}
-                    </Route> */}
                     <Route
                         path='/secret'
                         render={() => (
